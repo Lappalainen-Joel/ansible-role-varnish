@@ -22,10 +22,3 @@ sub {{ sub }} {
 }
 {{% endfor %}}
 {{% endif %}}
-
-{% for backend, value in varnish_backends.iteritems() %}
-backend {{ backend }} {
-{% for val in value %}{% set va = value.get(val)%}.{{ val }} = {{ va }};
-{% endfor %}
-}
-{% endfor %}
