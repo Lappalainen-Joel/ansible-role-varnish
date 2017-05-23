@@ -18,7 +18,7 @@ backend {{ backend }} {
 {% if varnish_subs is defined %}
 {% for sub, value in varnish_subs.iteritems() %}
 sub {{ sub }} {
-  value.content
+  {{ value.content }}
 }
-{{% endfor %}}
-{{% endif %}}
+{% endfor %}
+{% endif %}
